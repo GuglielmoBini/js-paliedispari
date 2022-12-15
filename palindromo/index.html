@@ -15,5 +15,18 @@
     <script defer src="script.js"></script>
     <title>Palindromo</title>
   </head>
-  <body></body>
+  <body>
+    <main class="container text-center mt-5">
+      <form id="word-form" class="mb-5">
+        <h1 class="mb-4">La tua parola sarà palindroma?</h1>
+        <label for="word" class="fs-4">scrivi una parola:</label>
+        <input type="text" id="word" />
+        <button class="btn btn-primary">CONTROLLA</button>
+        <input type="reset" value="Reset" class="btn btn-danger" />
+      </form>
+      <div>
+        <h2 id="target">La tua parola è palindroma!</h2>
+      </div>
+    </main>
+  </body>
 </html>
