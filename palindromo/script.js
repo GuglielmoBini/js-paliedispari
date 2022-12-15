@@ -9,7 +9,7 @@ Palindroma
 
 /*
 1- prendo gli elementi dal DOM.
-2- aggiungo event listener al form.
+2- aggiungo event listener al bottone.
 3- prendo il value dell'input.
 4- creo una funzione che ribalti la parola scritta dall'utente.
 5- controllo se la parola ribaltata è uguale all'originale.
@@ -17,3 +17,22 @@ Palindroma
 5b- se no(falso), la parola non è palindroma. 
 6- stampo il risultato in pagina.
 */
+
+//---------------------------------------------------------------
+
+// prendo gli elementi dal DOM
+
+const inputWord = document.getElementById("word");
+const checkButton = document.getElementById("check-btn");
+const targetElement = document.getElementById("target");
+
+// aggiungo event listener al bottone
+
+checkButton.addEventListener("click", function () {
+  // prendo il value dell'input
+  const userWord = inputWord.value.trim();
+
+  console.log(userWord);
+});
+
+// creo una funzione che ribalti la parola scritta dall'utente.
