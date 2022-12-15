@@ -25,12 +25,24 @@ const inputWord = document.getElementById("word");
 const checkButton = document.getElementById("check-btn");
 const targetElement = document.getElementById("target");
 
-// aggiungo event listener al bottone
+//creo una variabile d'appoggio
+let result = "";
 
+// aggiungo event listener al bottone
 checkButton.addEventListener("click", function () {
   // prendo il value dell'input
   const userWord = inputWord.value.trim();
-  console.log(userWord);
+  // validazione
+  if (!userWord) {
+    result = "non hai scritto niente";
+  } else {
+    result = "la parola scritta non è palindroma";
+    if (isPalindrome(userWord)) {
+      result = "La tua parola è palindroma!";
+    }
+  }
+  // stampo il risultato in pagina
+  targetElement.innerText = result;
 });
 
 // creo una funzione che ribalti la parola scritta dall'utente e controlla se la parola ribaltata è uguale all'originale.
@@ -43,7 +55,9 @@ function isPalindrome(word) {
     reverseWord += word[i];
   }
   // controllo se la parola ribaltata è uguale all'originale
+  // creo una flag
   let isEqual = false;
+
   if (reverseWord === word) {
     isEqual = true;
   }
